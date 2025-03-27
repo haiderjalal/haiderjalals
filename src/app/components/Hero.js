@@ -37,14 +37,14 @@ export default function Hero() {
   return (
     <section className="relative flex flex-col-reverse md:flex-row items-center justify-between p-8 ">
       {/* Spline Background Animation */}
-      <div className="absolute inset-0 -z-10 flex justify-center items-center">
+      {/* <div className="absolute inset-0 -z-10 flex justify-center items-center">
         <div className="w-full h-full order-2 border-red-500">
        
           <Spline scene="https://prod.spline.design/GMbDwrW2gPTDjuwt/scene.splinecode" />
           
         </div>
 
-      </div>
+      </div> */}
 
       {/* Text Section */}
       <div className="md:w-1/2 text-white z-10">
