@@ -8,6 +8,7 @@ import BackgroundAnimation from './components/BackgroundAnimation';
 export default function Home() {
   return (
     <div className="relative min-h-screen">
+      <BackgroundAnimation />
       <Navbar />
       <Hero />
       {/* Add other sections as needed */}
