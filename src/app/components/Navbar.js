@@ -4,7 +4,7 @@ import Spline from "@splinetool/react-spline";
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between items-center p-6">
+    <nav className="flex justify-between items-center p-6 relative z-50">
       {/* Left side text */}
       <div className="text-[#C5C505] text-xl font-bold w-[168px] h-[25px] ">
         Steam
@@ -35,12 +35,10 @@ export default function Navbar() {
         {/* Animated Spline Button */}
         <div >
           
-          {/* <Spline scene="https://prod.spline.design/qkUK14TRIFSRP8IU/scene.splinecode" /> */}
-          {/* <Spline    scene="https://prod.spline.design/qkUK14TRIFSRP8IU/scene.splinecode" 
-        width={2155}
-        height={1357} /> */}
+    
         <Spline
-        scene="https://prod.spline.design/DztAEa-8KbGkNyG3/scene.splinecode" 
+               scene="https://prod.spline.design/DztAEa-8KbGkNyG3/scene.splinecode" 
+
         width={150}
         height={50}
       />
