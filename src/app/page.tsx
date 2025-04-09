@@ -7,6 +7,7 @@ import BackgroundAnimation from './components/BackgroundAnimation';
 import InteractiveSection from './components/InteractiveSection';
 import AppShowcase from './components/AppShowcase';
 import DiscussSection from './components/DiscussSection';
+import HorizontalScrollCards from './components/HorizontalScrollCards';
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <InteractiveSection />
       <AppShowcase/>
       <DiscussSection/>
+      <HorizontalScrollCards/>
       {/* Add other sections as needed */}
     </div>
   );
