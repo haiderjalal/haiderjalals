@@ -5,7 +5,6 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-
 export default function Showcase() {
   const tabs = [
     {
