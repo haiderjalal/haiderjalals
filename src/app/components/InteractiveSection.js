@@ -13,7 +13,7 @@ export default function Showcase() {
       label: "For Everyone",
       buttonText: "View My Work",
       text: [
-        { text: "I’m a hands-on " },
+        { text: "Im a hands-on " },
         { text: "Digital Creative Director", className: "text-[#C5C505] font-semibold" },
         { text: " focused on crafting innovative digital experiences. Dive in to explore my work, my process, and how I bring ideas to life through " },
         { text: "collaboration" },
