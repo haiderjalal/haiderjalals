@@ -65,6 +65,8 @@ export default function Showcase() {
   return (
     <section className="bg-black text-white px-6 py-10 relative z-50">
       {/* Top Tabs */}
+
+      
       <div className="flex justify-center gap-4 mb-6 ">
         {tabs.map((tab) => (
           <button
@@ -78,6 +80,7 @@ export default function Showcase() {
           >
             {tab.label}
           </button>
+          
         ))}
       </div>
 
