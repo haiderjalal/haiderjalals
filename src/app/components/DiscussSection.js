@@ -19,7 +19,7 @@ const DiscussSection = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-start justify-center text-white py-10 relative z-10 pl-20">
+    <div className="flex flex-col items-start justify-center text-white py-10 relative z-10 pl-20 pb-20 bg-black">
       <h1 className="text-4xl font-semibold mb-4 z-20">Lets Discuss Your</h1>
       <div className="flex items-center z-20">
         <span className="text-2xl">Next </span>
