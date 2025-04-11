@@ -13,12 +13,12 @@ export default function Hero() {
    
 
           {/* Spline Background Animation */}
-          <div className="absolute inset-0 -z-10 flex justify-end items-center pr-210 mt-70">
-        {/* Moves animation slightly to the right */}
+          {/* <div className="absolute inset-0 -z-10 flex justify-end items-center pr-210 mt-70">
+    
         <div className="w-[250px] h-[250px]">
           <Spline scene="https://prod.spline.design/82FSBGH4xQCqAn6k/scene.splinecode" />
         </div>
-      </div>
+      </div> */}
  
       {/* Text Section */}
       <div className="md:w-1/2 text-white z-10">
