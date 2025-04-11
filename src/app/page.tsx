@@ -3,7 +3,7 @@
 // pages/index.js
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import BackgroundAnimation from './components/BackgroundAnimation';
+// import BackgroundAnimation from './components/BackgroundAnimation';
 import InteractiveSection from './components/InteractiveSection';
 import AppShowcase from './components/AppShowcase';
 import DiscussSection from './components/DiscussSection';
