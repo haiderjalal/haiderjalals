@@ -21,6 +21,21 @@ const cardData = [
     tags: ["2024", "NEXTJS", "3D", "Spline"],
     image: "/card3.jpg",
   },
+   {
+    name: "Sophie Zwartkruis",
+    tags: ["2024", "DEV", "GSAP", "MOTION"],
+    image: "/card1.jpg", // Make sure this is in your public/ folder
+  },
+  {
+    name: "John Doe",
+    tags: ["AI", "UX", "2025", "LEAD"],
+    image: "/card2.jpg",
+  },
+  {
+    name: "Haider Jalal",
+    tags: ["2024", "NEXTJS", "3D", "Spline"],
+    image: "/card3.jpg",
+  },
 ];
 
 export default function HorizontalScrollCards() {

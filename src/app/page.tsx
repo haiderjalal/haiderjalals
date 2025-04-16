@@ -1,6 +1,4 @@
 
-
-// pages/index.js
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 // import BackgroundAnimation from './components/BackgroundAnimation';
