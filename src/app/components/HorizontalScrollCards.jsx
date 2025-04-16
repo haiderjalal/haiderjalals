@@ -14,7 +14,7 @@ const cardData = [
   {
     name: "John Doe",
     tags: ["AI", "UX", "2025", "LEAD"],
-    image: "/card2.jpg",
+    image: "/team work.png",
   },
   {
     name: "Haider Jalal",
