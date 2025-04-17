@@ -6,6 +6,8 @@ import InteractiveSection from './components/InteractiveSection';
 import AppShowcase from './components/AppShowcase';
 import DiscussSection from './components/DiscussSection';
 import HorizontalScrollCards from './components/HorizontalScrollCards';
+import ContactForm from './components/ContactForm';
+import CapabilitiesSection from './components/CapabilitiesSection';
 
 
 export default function Home() {
@@ -19,6 +21,9 @@ export default function Home() {
       <AppShowcase/>
       <DiscussSection/>
       <HorizontalScrollCards/>
+      <ContactForm/>
+      <CapabilitiesSection/>
+
       {/* Add other sections as needed */}
     </div>
   );
