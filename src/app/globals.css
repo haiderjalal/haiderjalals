@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
+/* Ensure this is added at the top of your globals.css file */
+@import url('https://fonts.googleapis.com/css2?family=Bytesized&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,5 +33,101 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif,;
+  cursor: url('/cursor.png'), auto; /* Adjust the path to your cursor image */
+
+}
+
+
+
+
+/* In your global styles or CSS module */
+
+/* Small circles for the form inputs */
+.circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  border: 1px solid #c5c505;
+}
+
+.circle input {
+  width: 100%;
+  border: none;
+  text-align: center;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Error text */
+.error-text {
+  position: absolute;
+  bottom: -20px;
+  font-size: 12px;
+  color: red;
+}
+
+/* Large circle for the contact button */
+.big-circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  border: 1px solid #c5c505;
+}
+
+/* Contact button styling */
+.contact-button {
+  font-size: 24px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+
+/* Message Sent Animation */
+.message-sent-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Fade In Animation for Message */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* FONT  */
+.bytesized-regular {
+  font-family: "Bytesized", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
