@@ -4,6 +4,9 @@ import { useState } from "react";
 export default function CapabilitiesSection() {
   return (
     <section className="relative py-1 px-4 bg-gradient-to-r from-[#c5c505] via-[#000] to-[#A020F0]  h-165">
+<div className="bg-gradient-to-b from-[#000] to-transparent h-20 absolute inset-0 z-0">
+ 
+</div>
       <div className="absolute inset-0 flex justify-center items-center bottom-140 ">
         <h1 className="text-6xl font-bold text-white tracking-widest ">
           Our Capabilities
