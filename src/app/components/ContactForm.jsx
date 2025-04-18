@@ -52,7 +52,7 @@ export default function ContactForm() {
 
       {/* Form Section */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center bg-gradient-to-t from-black via-transparent to-black py-10 px-4 rounded-lg">
-        <h1 className="text-5xl font-bold text-white mb-10 mt-10 font-bytesized">
+        <h1 className="text-5xl font-bold text-white mb-10 mt-20 font-bytesized">
           GET READY TO ROCK AND ROLL
         </h1>
 
