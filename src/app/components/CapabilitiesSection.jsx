@@ -43,7 +43,7 @@ export default function CapabilitiesSection() {
 
       {/* Section Divider */}
       <div className="flex justify-center mt-16 text-white">
-        <div className="absolute right-0 left-290 top-50 transform -translate-x-1/2 -translate-y-1/7 rotate-[-10deg] w-1/3 text-center">
+        <div className="absolute right-0 left-240 top-50 transform -translate-x-1/2 -translate-y-1/7 rotate-[-10deg] w-1/3 text-center">
           <h3 className="text-2xl font-semibold mb-4">Branding</h3>
           <p className="text-lg">Web & Mobile design</p>
         </div>
@@ -56,19 +56,19 @@ export default function CapabilitiesSection() {
       </div>
 
       <div className="flex justify-center mt-16 text-white">
-        <div className="absolute left-200 right-60 top-80 transform -translate-x-1/2 -translate-y-1/7 rotate-[-10deg] w-1/3 text-center">
+        <div className="absolute left-180 right-60 top-80 transform -translate-x-1/2 -translate-y-1/7 rotate-[-10deg] w-1/3 text-center">
           <h3 className="text-5xl font-semibold mb-4">Backend</h3>
         </div>
       </div>
 
       <div className="flex justify-center mt-16 text-white">
-        <div className="absolute left-280 right-50 top-140 transform -translate-x-1/2 -translate-y-1/7 rotate-[-10deg] w-1/3 text-center">
+        <div className="absolute left-250 right-50 top-140 transform -translate-x-1/2 -translate-y-1/7 rotate-[-10deg] w-1/3 text-center">
           <h3 className="text-5xl font-semibold mb-4">React Native</h3>
         </div>
       </div>
 
       <div className="flex justify-center mt-16 text-white">
-        <div className="absolute left-250 right-50  top-100 transform -translate-x-1/2 -translate-y-1/7 rotate-[-10deg] w-1/3 text-center">
+        <div className="absolute left-230 right-55  top-100 transform -translate-x-1/2 -translate-y-1/7 rotate-[-10deg] w-1/3 text-center">
           <h3 className="text-5xl font-semibold mb-4">Automation</h3>
         </div>
       </div>
@@ -92,7 +92,7 @@ export default function CapabilitiesSection() {
           <div className="absolute inset-0 w-full h-1 bg-black rotate-45"></div>
         </div>
 
-        <div className="absolute w-32 h-32 left-300 top-100">
+        <div className="absolute w-32 h-32 left-270 top-100">
           {/* Horizontal bar */}
           <div className="absolute inset-0 w-full h-1 bg-black rotate-45"></div>
           {/* Vertical bar */}
