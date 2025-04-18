@@ -3,9 +3,9 @@ import { useState } from "react";
 
 export default function CapabilitiesSection() {
   return (
-    <section className="relative py-5 px-4 bg-gradient-to-r from-[#c5c505] via-[#000] to-[#c5c505]">
-      <div className="absolute inset-0 flex justify-center items-center">
-      <h1 className="text-6xl font-bold text-white tracking-widest mb-130">
+    <section className="relative py-1 px-4 bg-gradient-to-r from-[#c5c505] via-[#000] to-[#A020F0]  h-165">
+      <div className="absolute inset-0 flex justify-center items-center bottom-140 ">
+        <h1 className="text-6xl font-bold text-white tracking-widest ">
           Our Capabilities
         </h1>
       </div>
@@ -29,7 +29,9 @@ export default function CapabilitiesSection() {
 
         {/* Second Column */}
         <div className="flex-1 mt-12 md:mt-0 text-center md:text-left mb-80 right-60">
-          <h2 className="text-4xl font-semibold transform -translate-x-1/2 rotate-[-10deg]  ">Development</h2>
+          <h2 className="text-4xl font-semibold transform -translate-x-1/2 rotate-[-10deg]  ">
+            Development
+          </h2>
           <p className="text-lg mt-4 transform -translate-x-1/2 rotate-[-10deg]">
             We turn ideas into powerful dynamic websites.
           </p>
@@ -38,11 +40,40 @@ export default function CapabilitiesSection() {
 
       {/* Section Divider */}
       <div className="flex justify-center mt-16 text-white">
-      <div className="absolute right-0 top-1/2 transform -translate-x-1/2 -translate-y-1/7 rotate-[-10deg] w-1/3 text-center">
-  <h3 className="text-2xl font-semibold mb-4">Branding</h3>
-  <p className="text-lg">Web & Mobile design</p>
-</div>
+        <div className="absolute right-0 left-290 top-50 transform -translate-x-1/2 -translate-y-1/7 rotate-[-10deg] w-1/3 text-center">
+          <h3 className="text-2xl font-semibold mb-4">Branding</h3>
+          <p className="text-lg">Web & Mobile design</p>
+        </div>
+      </div>
 
+      <div className="flex justify-center mt-16 text-white">
+        <div className="absolute right-100 top-130 top-1/2 transform -translate-x-1/2 -translate-y-1/7 rotate-[-10deg] w-1/3 text-center">
+          <h3 className="text-5xl font-semibold mb-4 ">Front End</h3>
+        </div>
+      </div>
+
+      <div className="flex justify-center mt-16 text-white">
+        <div className="absolute left-200 right-60 top-80 transform -translate-x-1/2 -translate-y-1/7 rotate-[-10deg] w-1/3 text-center">
+          <h3 className="text-5xl font-semibold mb-4">Backend</h3>
+        </div>
+      </div>
+
+      <div className="flex justify-center mt-16 text-white">
+        <div className="absolute left-280 right-50 top-140 transform -translate-x-1/2 -translate-y-1/7 rotate-[-10deg] w-1/3 text-center">
+          <h3 className="text-5xl font-semibold mb-4">React Native</h3>
+        </div>
+      </div>
+
+      <div className="flex justify-center mt-16 text-white">
+        <div className="absolute left-250 right-50  top-100 transform -translate-x-1/2 -translate-y-1/7 rotate-[-10deg] w-1/3 text-center">
+          <h3 className="text-5xl font-semibold mb-4">Automation</h3>
+        </div>
+      </div>
+
+      <div className="flex justify-center mt-16 text-white">
+        <div className="absolute left-50 right-50  top-140 transform -translate-x-1/2 -translate-y-1/7 rotate-[-10deg] w-1/3 text-center">
+          <h3 className="text-5xl font-semibold mb-4">Next JS</h3>
+        </div>
       </div>
     </section>
   );
