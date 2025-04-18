@@ -78,6 +78,32 @@ export default function CapabilitiesSection() {
           <h3 className="text-5xl font-semibold mb-4">Next JS</h3>
         </div>
       </div>
+
+
+      
+        <div className="absolute w-32 h-32 top-50">
+          {/* Horizontal bar */}
+          <div className="absolute inset-0 w-full h-1 bg-black rotate-45"></div>
+          {/* Vertical bar */}
+          <div className="absolute inset-0 w-full h-1 bg-black rotate-90"></div>
+          {/* Diagonal top-left to bottom-right */}
+          <div className="absolute inset-0 w-full h-1 bg-black rotate-135"></div>
+          {/* Diagonal top-right to bottom-left */}
+          <div className="absolute inset-0 w-full h-1 bg-black rotate-45"></div>
+        </div>
+
+        <div className="absolute w-32 h-32 left-300 top-100">
+          {/* Horizontal bar */}
+          <div className="absolute inset-0 w-full h-1 bg-black rotate-45"></div>
+          {/* Vertical bar */}
+          <div className="absolute inset-0 w-full h-1 bg-black rotate-90"></div>
+          {/* Diagonal top-left to bottom-right */}
+          <div className="absolute inset-0 w-full h-1 bg-black rotate-135"></div>
+          {/* Diagonal top-right to bottom-left */}
+          <div className="absolute inset-0 w-full h-1 bg-black rotate-45"></div>
+        </div>
+      
+      
     </section>
   );
 }
