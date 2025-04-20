@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@splinetool/react-spline": "^4.0.0",
+    "aos": "^2.3.4",
     "framer-motion": "^12.6.3",
     "gsap": "^3.12.7",
     "lucide-react": "^0.487.0",
