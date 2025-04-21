@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container mx-auto px-6 text-center">
         {/* Logo or Name */}
         <motion.h2
-          className="text-4xl font-bold mb-6"
+          className="text-4xl font-bold mb-6  text-[#c5c505]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
