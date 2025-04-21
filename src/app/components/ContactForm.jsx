@@ -65,6 +65,7 @@ export default function ContactForm() {
                 placeholder="Name *"
                 value={formData.name}
                 onChange={handleChange}
+                  className="text-white"
               />
               {errors.name && <p className="error-text">{errors.name}</p>}
             </div>
@@ -86,6 +87,7 @@ export default function ContactForm() {
                 placeholder="Telegram/WhatsApp"
                 value={formData.telegram}
                 onChange={handleChange}
+                  className="text-white"
               />
               {errors.telegram && <p className="error-text">{errors.telegram}</p>}
             </div>
