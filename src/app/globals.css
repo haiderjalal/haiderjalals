@@ -62,6 +62,7 @@ body {
   border: none;
   text-align: center;
   font-size: 14px;
+  
   outline: none;
 }
 
@@ -75,8 +76,8 @@ body {
 
 /* Large circle for the contact button */
 .big-circle {
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   background-color: black;
   display: flex;

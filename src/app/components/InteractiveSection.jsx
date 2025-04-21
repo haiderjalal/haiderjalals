@@ -1,8 +1,10 @@
 
 
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
+import "aos/dist/aos.css"; // Import AOS CSS
+import AOS from "aos";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Showcase() {
@@ -58,6 +60,16 @@ export default function Showcase() {
 
   const [activeTab, setActiveTab] = useState("everyone");
 
+
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration (in milliseconds)
+      easing: "ease-in-out", // Animation easing
+      once: true, // Animation occurs only once when the element comes into view
+    });
+  }, []);
+
   const activeContent = tabs.find((tab) => tab.key === activeTab)?.text;
   const activeTabData = tabs.find((tab) => tab.key === activeTab);
 
@@ -105,9 +117,6 @@ export default function Showcase() {
     </motion.div>
   </AnimatePresence>
 </div>
-
-
-    
 
       {/* Location + CTA Button */}
       <div className="flex flex-col md:flex-row justify-between items-center mt-10 gap-4 max-w-5xl mx-auto">

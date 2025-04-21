@@ -75,6 +75,7 @@ export default function ContactForm() {
                 placeholder="E-mail *"
                 value={formData.email}
                 onChange={handleChange}
+                className="text-white"
               />
               {errors.email && <p className="error-text">{errors.email}</p>}
             </div>
@@ -89,7 +90,7 @@ export default function ContactForm() {
               {errors.telegram && <p className="error-text">{errors.telegram}</p>}
             </div>
           </div>
-          <div className="big-circle mb-10">
+          <div className="big-circle mb-10 ">
             <button type="submit" className="contact-button">
               Talk to Founders
             </button>

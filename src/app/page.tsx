@@ -8,6 +8,7 @@ import DiscussSection from './components/DiscussSection';
 import HorizontalScrollCards from './components/HorizontalScrollCards';
 import ContactForm from './components/ContactForm';
 import CapabilitiesSection from './components/CapabilitiesSection';
+import Footer from './components/Footer';
 
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <HorizontalScrollCards/>
       <ContactForm/>
       <CapabilitiesSection/>
+      <Footer/>
 
       {/* Add other sections as needed */}
     </div>
