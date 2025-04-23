@@ -6,8 +6,9 @@ export default function Dressify() {
     <div className="relative h-screen w-full">
       {/* Your Spline scene */}
       <Spline
-        scene="https://prod.spline.design/JfpZqiCo0zZ2mLXn/scene.splinecode"
-        className="z-0 pt-10 pb-15" 
+        scene="https://prod.spline.design/JfpZqiCo0zZ2mLXn/scene.splinecode" 
+        width={1920}
+        height={1098}
       />
 
       {/* Black gradient at the top of the section */}
