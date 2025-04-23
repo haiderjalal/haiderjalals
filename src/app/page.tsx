@@ -9,6 +9,7 @@ import HorizontalScrollCards from './components/HorizontalScrollCards';
 import ContactForm from './components/ContactForm';
 import CapabilitiesSection from './components/CapabilitiesSection';
 import Footer from './components/Footer';
+import Dressify from './components/Dressify';
 
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
       <HorizontalScrollCards/>
       <ContactForm/>
       <CapabilitiesSection/>
+      <Dressify/>
       <Footer/>
 
       {/* Add other sections as needed */}

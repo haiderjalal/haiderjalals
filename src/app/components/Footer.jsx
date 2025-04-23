@@ -4,8 +4,11 @@ import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
+    
     <footer className="bg-gradient-to-r from-[#C5C505] via-[#000] to-[#A020F0] py-16 text-white">
+         
       <div className="container mx-auto px-6 text-center">
+        
         {/* Logo or Name */}
         <motion.h2
           className="text-4xl font-bold mb-6  text-[#c5c505]"
@@ -82,6 +85,7 @@ export default function Footer() {
         {/* Diagonal top-right to bottom-left */}
         <div className="absolute inset-0 w-full h-1 bg-black rotate-45"></div>
       </div>
+  
       </div>
     </footer>
   );
