@@ -75,7 +75,7 @@ export default function CapabilitiesSection() {
 
       <div className="flex justify-center mt-16 text-white">
         <div className="absolute left-250 right-50 top-140 transform -translate-x-1/2 -translate-y-1/7 rotate-[-10deg] w-1/3 text-center" data-aos="zoom-in">
-          <h3 className="text-5xl font-semibold mb-4">React Native</h3>
+          <h3 className="text-5xl font-semibold mb-4">Mobile App Development</h3>
         </div>
       </div>
 
