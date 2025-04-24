@@ -8,8 +8,10 @@ import DiscussSection from './components/DiscussSection';
 import HorizontalScrollCards from './components/HorizontalScrollCards';
 import ContactForm from './components/ContactForm';
 import CapabilitiesSection from './components/CapabilitiesSection';
-import Footer from './components/Footer';
 import Dressify from './components/Dressify';
+import Gymyg from './components/Gymyg';
+import Footer from './components/Footer';
+
 
 
 export default function Home() {
@@ -26,6 +28,7 @@ export default function Home() {
       <ContactForm/>
       <CapabilitiesSection/>
       <Dressify/>
+      <Gymyg/>
       <Footer/>
 
       {/* Add other sections as needed */}
