@@ -6,6 +6,8 @@ export default function Footer() {
   return (
     
     <footer className="bg-gradient-to-r from-[#C5C505] via-[#000] to-[#A020F0] py-16 text-white">
+            <div className="absolute inset-x-0 top-0 h-1/6 bg-gradient-to-b from-black to-transparent z-10"></div>
+
          
       <div className="container mx-auto px-6 text-center">
         
