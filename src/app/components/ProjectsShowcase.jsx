@@ -21,9 +21,6 @@ const dressifyX = useTransform(scrollYProgress, [0, 0.5], [0, -200]); // Slide l
 const gymygOpacity = useTransform(scrollYProgress, [0.5, 1], [0, 1]); // Fade in from 0 to 1
 const gymygX = useTransform(scrollYProgress, [0.5, 1], [200, 0]); // Slide in from 200 to 0
 
-// GymygFeed fades in and slides from the bottom when Gymyg is fully visible
-const gymygFeedOpacity = useTransform(scrollYProgress, [0.7, 1], [0, 1]); // GymygFeed fade-in after Gymyg
-const gymygFeedY = useTransform(scrollYProgress, [0.7, 1], [200, 0]); // GymygFeed slides up from the bottom to its final position
 
   return (
     <div ref={containerRef} className="relative h-[200vh]">
@@ -55,17 +52,7 @@ const gymygFeedY = useTransform(scrollYProgress, [0.7, 1], [200, 0]); // GymygFe
           <Gymyg />
         </motion.div>
 
-        {/* GymygFeed Section */}
-        <motion.div
-          className="absolute top-0 left-0 h-full w-full"
-          style={{
-            opacity: gymygFeedOpacity, // Make GymygFeed visible when Gymyg is gone
-            y: gymygFeedY, // GymygFeed slides up from bottom to its position
-            zIndex: 0, // GymygFeed appears after Gymyg disappears
-          }}
-        >
-          <GymygFeed /> {/* GymygFeed component that will show after Gymyg */}
-        </motion.div>
+      
       </div>
     </div>
   );
