@@ -65,6 +65,7 @@ export default function ContactForm() {
                 placeholder="Name *"
                 value={formData.name}
                 onChange={handleChange}
+                  className="text-white"
               />
               {errors.name && <p className="error-text">{errors.name}</p>}
             </div>
@@ -75,6 +76,7 @@ export default function ContactForm() {
                 placeholder="E-mail *"
                 value={formData.email}
                 onChange={handleChange}
+                className="text-white"
               />
               {errors.email && <p className="error-text">{errors.email}</p>}
             </div>
@@ -85,11 +87,12 @@ export default function ContactForm() {
                 placeholder="Telegram/WhatsApp"
                 value={formData.telegram}
                 onChange={handleChange}
+                  className="text-white"
               />
               {errors.telegram && <p className="error-text">{errors.telegram}</p>}
             </div>
           </div>
-          <div className="big-circle mb-10">
+          <div className="big-circle mb-10 ">
             <button type="submit" className="contact-button">
               Talk to Founders
             </button>
