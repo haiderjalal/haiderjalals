@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import Spline from "@splinetool/react-spline"; // Import the Spline component
 
@@ -45,9 +46,9 @@ export default function ContactForm() {
     <div className="flex flex-col items-center justify-center h-screen relative overflow-hidden">
       {/* Spline Background Animation */}
       <div className="absolute inset-0 z-0">
-      <Spline
-        scene="https://prod.spline.design/t9w-C0eETE0gqoNi/scene.splinecode" 
-      />
+        <Spline
+          scene="https://prod.spline.design/t9w-C0eETE0gqoNi/scene.splinecode" 
+        />
       </div>
 
       {/* Form Section */}
@@ -65,7 +66,7 @@ export default function ContactForm() {
                 placeholder="Name *"
                 value={formData.name}
                 onChange={handleChange}
-                  className="text-white"
+                className="text-white"
               />
               {errors.name && <p className="error-text">{errors.name}</p>}
             </div>
@@ -87,7 +88,7 @@ export default function ContactForm() {
                 placeholder="Telegram/WhatsApp"
                 value={formData.telegram}
                 onChange={handleChange}
-                  className="text-white"
+                className="text-white"
               />
               {errors.telegram && <p className="error-text">{errors.telegram}</p>}
             </div>

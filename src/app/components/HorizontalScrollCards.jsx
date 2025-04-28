@@ -66,7 +66,7 @@ export default function HorizontalScrollCards() {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen w-full overflow-hidden bg-[#F1E8DF]"
+      className="relative h-screen w-full overflow-hidden bg-gradient-to-b from-black to-transparent"
     >
       <div
         ref={scrollRef}
