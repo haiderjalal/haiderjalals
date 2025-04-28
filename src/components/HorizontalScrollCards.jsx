@@ -5,6 +5,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+
+// Dynamically import the HorizontalScrollCards component with ssr: false
+const HorizontalScrollCards = dynamic(
+  () => import("./HorizontalScrollCards"),
+  { ssr: false }
+);
+
 const cardData = [
   {
     name: "Sophie Zwartkruis",
