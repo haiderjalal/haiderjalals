@@ -1,16 +1,15 @@
+
+
+
+
+// src/components/HorizontalScrollCards.jsx
 "use client";
-import { useEffect, useRef } from "react";
+
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
-
-
-// Dynamically import the HorizontalScrollCards component with ssr: false
-const HorizontalScrollCards = dynamic(
-  () => import("./HorizontalScrollCards"),
-  { ssr: false }
-);
 
 const cardData = [
   {
@@ -43,7 +42,7 @@ const cardData = [
     tags: ["2024", "NEXTJS", "3D", "Spline"],
     image: "/card3.jpg",
   },
-];
+];;
 
 export default function HorizontalScrollCards() {
   const containerRef = useRef(null);
@@ -75,10 +74,7 @@ export default function HorizontalScrollCards() {
       ref={containerRef}
       className="relative h-screen w-full overflow-hidden bg-gradient-to-b from-black to-transparent"
     >
-      <div
-        ref={scrollRef}
-        className="flex space-x-10 px-10 py-20 w-max h-auto"
-      >
+      <div ref={scrollRef} className="flex space-x-10 px-10 py-20 w-max h-auto">
         {cardData.map((card, i) => (
           <div
             key={i}
