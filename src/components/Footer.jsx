@@ -6,9 +6,10 @@ export default function Footer() {
   return (
     
     <footer className="bg-gradient-to-r from-[#C5C505] via-[#000] to-[#A020F0] py-16 text-white">
-
+       
          
       <div className="container mx-auto px-6 text-center">
+        
         
         {/* Logo or Name */}
         <motion.h2
