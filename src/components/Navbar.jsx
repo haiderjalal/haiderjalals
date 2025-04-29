@@ -31,20 +31,16 @@ export default function Navbar() {
         >
           Services
         </Link>
+        <Link
+          href="#contact"
+          className="text-[#C5C505] hover:text-gray-400  w-[110px] h-[30px]"
+        >
+          contact
+        </Link>
 
-        {/* Animated Spline Button */}
-        <div >
-          
-    
-        <Spline
-               scene="https://prod.spline.design/DztAEa-8KbGkNyG3/scene.splinecode" 
-
-        width={150}
-        height={50}
-      />
 
           
-        </div>
+      
       </div>
     </nav>
   );

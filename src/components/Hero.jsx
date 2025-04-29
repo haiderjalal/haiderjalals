@@ -1,4 +1,6 @@
-"use client";
+// Hero.jsx (Client-Side Component)
+"use client"; // This indicates this component should run on the client-side
+
 import Image from "next/image";
 import Spline from "@splinetool/react-spline";
 import { useEffect } from "react";
