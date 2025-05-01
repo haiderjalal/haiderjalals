@@ -25,9 +25,9 @@ export default function Home() {
       <DiscussSection />
       {/* Dynamically rendered HorizontalScrollCards component */}
       <HorizontalScrollCards />
-      <ContactForm />
       <CapabilitiesSection />
       <ProjectShowcase />
+      <ContactForm />
       <Footer />
     </div>
   );

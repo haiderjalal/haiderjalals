@@ -4,6 +4,10 @@
 /* Ensure this is added at the top of your globals.css file */
 @import url('https://fonts.googleapis.com/css2?family=Bytesized&display=swap');
 
+/* src/styles/globals.css */
+@import './LoadingScreen.css';  /* Import the loading screen styles */
+
+
 
 @tailwind base;
 @tailwind components;
@@ -132,3 +136,7 @@ body {
   font-style: normal;
 }
 
+
+
+/* laodingscreen */
+/* src/styles/loadingScreen.css */
