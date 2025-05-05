@@ -2,7 +2,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import LoadingScreen from "./LoadingScreen"; // Import loading screen component
+import LoadingScreen from "./LoadingScreen";
 
 export default function ClientLoadingWrapper({ children }) {
   const [isLoading, setIsLoading] = useState(true);
