@@ -15,13 +15,13 @@ export default function ClientProjectShowcase() {
     offset: ["start start", "end end"],
   });
 
-  // Dressify: fade & slide from 0 → 0.6 scroll
-  const dressifyOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
-  const dressifyX = useTransform(scrollYProgress, [0, 0.6], [0, -200]);
+  // Dressify: fade & slide from 0 → 0.4 scroll
+  const dressifyOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]); // Dressify fades out quickly
+  const dressifyX = useTransform(scrollYProgress, [0, 0.4], [0, -200]); // Dressify slides out
 
-  // Gymyg: delayed fade-in and slide-in starting from 0.5 → 1 scroll
-  const gymygOpacity = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
-  const gymygX = useTransform(scrollYProgress, [0.5, 1], [200, 0]);
+  // Gymyg: delayed fade-in and slide-in starting from 0.3 → 1 scroll
+  const gymygOpacity = useTransform(scrollYProgress, [0.3, 1], [0, 1]); // Gymyg fades in smoothly
+  const gymygX = useTransform(scrollYProgress, [0.3, 1], [200, 0]); // Gymyg slides in from the right
 
   return (
     <div ref={containerRef} className="relative h-screen overflow-hidden">
