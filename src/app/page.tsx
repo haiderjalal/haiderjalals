@@ -1,5 +1,5 @@
 // Dynamically import the client-side component with ssr: false
-import dynamic from "next/dynamic";
+
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import InteractiveSection from '../components/InteractiveSection';
