@@ -3,10 +3,10 @@ import Spline from "@splinetool/react-spline";
 
 export default function Dressify() {
   return (
-    <div className="relative h-full w-full bg-black">
-       <Spline
-        scene="https://prod.spline.design/7ITQh1YmUH4h5YpV/scene.splinecode" 
-      />
-    </div>
+    <div className="relative h-full w-full bg-black pointer-events-auto">
+    <Spline
+      scene="https://prod.spline.design/7ITQh1YmUH4h5YpV/scene.splinecode" 
+    />
+  </div> 
   );
 }
