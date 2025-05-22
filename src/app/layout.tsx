@@ -1,6 +1,6 @@
 
 // src/app/layout.tsx
-import { ReactNode, useState, useEffect } from "react";
+import { ReactNode,} from "react";
 import ClientLoadingWrapper from "../components/ClientLoadingWrapper"; // Import your loading wrapper component
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
