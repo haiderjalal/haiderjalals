@@ -1,13 +1,27 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-/* Ensure this is added at the top of your globals.css file */
-@import url('https://fonts.googleapis.com/css2?family=Bytesized&display=swap');
-
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Load fonts asynchronously to prevent render blocking */
+@layer base {
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2') format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'Bytesized';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/bytesized/v1/bytesized-regular.woff2') format('woff2');
+  }
+}
 
 
 :root {
@@ -32,9 +46,12 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif,;
-  cursor: url('/cursor.png'), auto; /* Adjust the path to your cursor image */
-
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  cursor: url('/cursor.png'), auto;
+  /* Improve performance */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 

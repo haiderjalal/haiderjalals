@@ -1,6 +1,16 @@
 "use client";
-import { useState } from "react";
-import Spline from "@splinetool/react-spline";
+import { useState, Suspense } from "react";
+import dynamic from "next/dynamic";
+
+// Temporarily disabled Spline due to package export issues with Next.js 15
+// const Spline = dynamic(() => import("@splinetool/react-spline").then(mod => ({ default: mod.default || mod })), {
+//   ssr: false,
+//   loading: () => (
+//     <div className="flex items-center justify-center h-full">
+//       <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-white"></div>
+//     </div>
+//   ),
+// });
 
 export default function AppShowcase() {
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -33,7 +43,8 @@ export default function AppShowcase() {
     <section className="relative h-screen w-full flex items-center justify-center text-center overflow-hidden bg-black">
       {/* Background Animation */}
       <div className="absolute inset-0 z-0 w-full h-full">
-        <Spline scene="https://prod.spline.design/qnUCGGmsvXyElqES/scene.splinecode" />
+        {/* Spline animation temporarily disabled */}
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-gray-900 via-gray-800 to-black"></div>
       </div>
 
       {/* Overlay */}
@@ -60,12 +71,19 @@ export default function AppShowcase() {
             className="flex flex-col items-center space-y-4 w-full max-w-4xl"
             onMouseLeave={() => setHoveredProject(null)}
           >
-            <div
-              className="max-w-full h-auto"
-              dangerouslySetInnerHTML={{
-                __html: projects.find(p => p.name === hoveredProject)?.behanceEmbed,
-              }}
-            />
+            <div className="max-w-full h-auto">
+              <iframe 
+                src={`https://www.behance.net/embed/project/176532277?ilo0=1`}
+                height="316" 
+                width="404" 
+                allowFullScreen 
+                loading="lazy"
+                frameBorder="0" 
+                allow="clipboard-write" 
+                referrerPolicy="strict-origin-when-cross-origin"
+                className="rounded-lg"
+              />
+            </div>
             <h2
               className="text-5xl md:text-6xl font-bold mt-4"
               style={{ color: projects.find(p => p.name === hoveredProject)?.color }}

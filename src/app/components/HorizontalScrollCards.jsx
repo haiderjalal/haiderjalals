@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -59,18 +60,24 @@ export default function HorizontalScrollCards() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      if (!scrollRef.current || !containerRef.current) return;
+      
       const totalWidth = scrollRef.current.scrollWidth;
+      const viewportWidth = window.innerWidth;
+      
+      if (totalWidth <= viewportWidth) return;
 
       gsap.to(scrollRef.current, {
-        x: () => `-${totalWidth - window.innerWidth}`,
+        x: () => `-${totalWidth - viewportWidth}`,
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: () => `+=${totalWidth - window.innerWidth}`,
-          scrub: true,
+          end: () => `+=${totalWidth - viewportWidth}`,
+          scrub: 1,
           pin: true,
           anticipatePin: 1,
+          invalidateOnRefresh: true,
         },
       });
     }, containerRef);
@@ -92,10 +99,15 @@ export default function HorizontalScrollCards() {
             key={i}
             className="bg-[#E9DFD6] rounded-3xl shadow-xl w-[80vw] h-auto max-w-[500px] p-6 flex-shrink-0 flex flex-col items-center text-center overflow-hidden"
           >
-            <img
+            <Image
               src={card.image}
               alt={card.name}
+              width={500}
+              height={300}
               className="rounded-2xl w-full h-[300px] object-cover mb-6"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+Kcp"
             />
             <h2 className="text-xl md:text-2xl font-bold text-[#c5c505] leading-snug break-words">
               {card.name.split(" ")[0]}
