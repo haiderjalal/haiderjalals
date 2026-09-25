@@ -45,6 +45,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://prod.spline.design" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://prod.spline.design" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>

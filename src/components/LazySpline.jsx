@@ -12,31 +12,64 @@ const Spline = dynamic(() => import("@splinetool/react-spline").then(mod => ({ d
   ),
 });
 
-export default function LazySpline({ scene, className = "", fallbackColor = "#C5C505", showLoader = true }) {
+// Each mounted Spline scene holds its own WebGL context, and browsers cap how many
+// can exist at once ("Web page caused context loss and was blocked"). The homepage
+// has five scenes, so a mounted-forever scene both exhausts that budget and keeps
+// burning GPU on a render loop nobody can see. Unmounting on exit lets
+// react-spline call app.dispose(), which releases the context.
+export default function LazySpline({ scene, className = "", fallbackColor = "#C5C505", showLoader = true, defer = false }) {
   const [isVisible, setIsVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "100px", // Start loading 100px before the element is visible
-      }
-    );
+    let observer;
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+    const observe = () => {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          setIsVisible(entry.isIntersecting);
+          if (!entry.isIntersecting) {
+            // Next mount starts from the loader again rather than a blank canvas.
+            setIsLoaded(false);
+          }
+        },
+        {
+          threshold: 0,
+          // Generous margin: mount before the scene scrolls in and hold it a while
+          // past the edge, so small scroll jitters near the boundary don't thrash
+          // the context up and down.
+          rootMargin: "300px",
+        }
+      );
+
+      if (containerRef.current) {
+        observer.observe(containerRef.current);
+      }
+    };
+
+    // An above-the-fold scene intersects immediately, so the WebGL runtime would
+    // start downloading while the browser is still painting the hero. `defer`
+    // waits for idle time so the scene never competes with first paint.
+    if (!defer) {
+      observe();
+      return () => observer?.disconnect();
     }
 
-    return () => observer.disconnect();
-  }, []);
+    let idleId;
+    let timeoutId;
+    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+      idleId = window.requestIdleCallback(observe, { timeout: 2500 });
+    } else {
+      timeoutId = setTimeout(observe, 1200);
+    }
+
+    return () => {
+      if (idleId && window.cancelIdleCallback) window.cancelIdleCallback(idleId);
+      if (timeoutId) clearTimeout(timeoutId);
+      observer?.disconnect();
+    };
+  }, [defer]);
 
   const handleLoad = () => {
     setIsLoaded(true);

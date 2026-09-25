@@ -1,18 +1,33 @@
 // ClientProjectShowcase.tsx
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import Dressify from "./Dressify";
 import Gymyg from "./Gymyg";
 
+// The two scenes are stacked in one sticky viewport, so both are permanently
+// "intersecting" and LazySpline's observer cannot tell them apart. Scroll
+// progress can: each scene is mounted only around the stretch where it is
+// actually visible, so two WebGL contexts coexist just through the crossfade
+// instead of for the whole section.
+const DRESSIFY_UNMOUNT_AFTER = 0.45; // fully faded out at 0.4
+const GYMYG_MOUNT_AFTER = 0.25; // starts fading in at 0.3
+
 export default function ClientProjectShowcase() {
   const containerRef = useRef(null);
+  const [showDressify, setShowDressify] = useState(true);
+  const [showGymyg, setShowGymyg] = useState(false);
 
   // Track scroll
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (p) => {
+    setShowDressify(p < DRESSIFY_UNMOUNT_AFTER);
+    setShowGymyg(p > GYMYG_MOUNT_AFTER);
   });
 
   // Dressify: fade & slide from 0 → 0.4 scroll
@@ -34,7 +49,7 @@ export default function ClientProjectShowcase() {
           zIndex: 2, // Ensure it stays in front of other elements
         }}
       >
-        <Dressify />
+        {showDressify && <Dressify />}
       </motion.div>
 
       {/* Gymyg */}
@@ -46,7 +61,7 @@ export default function ClientProjectShowcase() {
           zIndex: 1, // Ensure Gymyg stays behind Dressify
         }}
       >
-        <Gymyg />
+        {showGymyg && <Gymyg />}
       </motion.div>
     </div>
   );

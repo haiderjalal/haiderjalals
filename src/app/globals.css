@@ -129,3 +129,30 @@ body {
 
 /* laodingscreen */
 /* src/styles/loadingScreen.css */
+
+/* Hero intro.
+   Replaces AOS above the fold: AOS starts [data-aos] elements at opacity:0 and
+   only reveals them once its JS has loaded and run, which hid the LCP heading.
+   These start visible and animate purely in CSS. */
+.hero-in {
+  animation: hero-fade-up 900ms ease-in-out both;
+}
+.hero-in-right {
+  animation: hero-fade-left 900ms ease-in-out both;
+}
+
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes hero-fade-left {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-in,
+  .hero-in-right {
+    animation: none;
+  }
+}

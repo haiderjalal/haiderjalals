@@ -9,6 +9,7 @@ import HorizontalScrollCards from '../components/HorizontalScrollCards';
 import ContactForm from '../components/ContactForm';
 import CapabilitiesSection from '../components/CapabilitiesSection';
 import ProjectShowcase from '../components/ProjectsShowcase';
+import WebProjects from '../components/WebProjects';
 import Footer from '../components/Footer';
 
 
@@ -27,6 +28,7 @@ export default function Home() {
       <HorizontalScrollCards />
       <CapabilitiesSection />
       <ProjectShowcase />
+      <WebProjects />
       <ContactForm />
       <Footer />
     </div>
