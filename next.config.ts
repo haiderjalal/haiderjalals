@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   // Enable image optimization
@@ -10,32 +11,33 @@ const nextConfig: NextConfig = {
   
   // Enable compression
   compress: true,
+
+  // @splinetool/* are ESM-only (exports map has no "require" condition), so the
+  // server build cannot externalise them as CJS. Transpiling fixes the
+  // "Package path . is not exported" resolution error.
+  transpilePackages: ["@splinetool/react-spline", "@splinetool/runtime"],
   
   // Optimize bundle
   experimental: {
     optimizePackageImports: ['framer-motion', 'gsap', 'aos'],
   },
   
-  // Webpack optimizations
-  webpack: (config, { dev, isServer }) => {
-    if (!dev && !isServer) {
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-          },
-          spline: {
-            test: /[\\/]node_modules[\\/]@splinetool[\\/]/,
-            name: 'spline',
-            chunks: 'all',
-            priority: 10,
-          },
-        },
-      };
-    }
+  // Webpack: only the Spline resolution fix. Next's default splitChunks is better
+  // tuned than a hand-rolled "everything in one vendors chunk" override, which forced
+  // all of node_modules onto every route.
+  webpack: (config: any) => {
+    // @splinetool/react-spline ships an ESM-only exports map (only a "types" and
+    // "import" condition). Next's server/RSC layers resolve with "require"/"react-server",
+    // find no match, and fail with "Package path . is not exported". Point webpack at the
+    // ESM build directly to bypass the exports map.
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@splinetool/react-spline$": path.resolve(
+        process.cwd(),
+        "node_modules/@splinetool/react-spline/dist/react-spline.js"
+      ),
+    };
+
     return config;
   },
 };

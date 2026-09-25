@@ -1,3 +1,4 @@
+// src/components/HorizontalScrollCards.jsx
 "use client";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
@@ -15,7 +16,7 @@ const cardData = [
   {
     name: "John Doe",
     tags: ["AI", "UX", "2025", "LEAD"],
-    image: "/team work.png",
+    image: "/team-work.jpg",
   },
   {
     name: "Haider Jalal",
@@ -88,12 +89,9 @@ export default function HorizontalScrollCards() {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen w-full overflow-hidden bg-[#F1E8DF]"
+      className="relative h-screen w-full overflow-hidden bg-gradient-to-b from-black to-transparent"
     >
-      <div
-        ref={scrollRef}
-        className="flex space-x-10 px-10 py-20 w-max h-auto"
-      >
+      <div ref={scrollRef} className="flex space-x-10 px-10 py-20 w-max h-auto">
         {cardData.map((card, i) => (
           <div
             key={i}

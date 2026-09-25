@@ -12,7 +12,7 @@ const Spline = dynamic(() => import("@splinetool/react-spline").then(mod => ({ d
   ),
 });
 
-export default function LazySpline({ scene, className = "", fallbackColor = "#C5C505" }) {
+export default function LazySpline({ scene, className = "", fallbackColor = "#C5C505", showLoader = true }) {
   const [isVisible, setIsVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const containerRef = useRef(null);
@@ -51,14 +51,21 @@ export default function LazySpline({ scene, className = "", fallbackColor = "#C5
       {!isVisible ? (
         // Placeholder while not visible
         <div className="absolute inset-0 bg-black flex items-center justify-center">
-          <div className="animate-pulse rounded-full h-16 w-16 bg-gray-800"></div>
+          {showLoader && (
+            <div className="animate-pulse rounded-full h-16 w-16 bg-gray-800"></div>
+          )}
         </div>
       ) : (
         // Load Spline when visible
         <>
           {!isLoaded && (
             <div className="absolute inset-0 bg-black flex items-center justify-center z-10">
-              <div className={`animate-spin rounded-full h-32 w-32 border-b-2`} style={{ borderColor: fallbackColor }}></div>
+              {showLoader && (
+                <div
+                  className="animate-spin rounded-full h-32 w-32 border-b-2"
+                  style={{ borderColor: fallbackColor }}
+                ></div>
+              )}
             </div>
           )}
           <Spline
